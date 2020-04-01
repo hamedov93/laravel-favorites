@@ -1,0 +1,37 @@
+{
+    "name": "hamedov/laravel-favorites",
+    "description": "Manage user favorites in laravel application.",
+    "keywords": ["laravel", "favorites", "likes"],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^7.4"
+    },
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/hamedov93/laravel-favorites/issues",
+        "source": "https://github.com/hamedov93/laravel-favorites"
+    },
+    "authors": [
+        {
+            "name": "Mohamed Hamed",
+            "email": "m.hamed@nezam.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hamedov\\Favorites\\FavoritesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Hamedov\\Favorites\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
