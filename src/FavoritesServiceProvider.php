@@ -1,12 +1,12 @@
 <?php
 
-namespace Hamedov\Taxonomies;
+namespace Hamedov\Favorites;
 
 use Illuminate\Support\ServiceProvider;
 use Hamedov\Favorites\Favorites;
 
 
-class TaxonomyServiceProvider extends ServiceProvider
+class FavoritesServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -26,9 +26,9 @@ class TaxonomyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->publishes([
-        //     __DIR__.'/../config/config.php' => config_path('favorites.php'),
-        // ]);
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('favorites.php'),
+        ]);
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
