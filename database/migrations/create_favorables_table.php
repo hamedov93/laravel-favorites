@@ -17,6 +17,7 @@ class CreateFavorablesTable extends Migration
         Schema::create('favorables', function (Blueprint $table) {
             $table->unsignedBigInteger(Favorites::userForeignKey());
             $table->morphs('favorable');
+            $table->timestamps();
 
             $table->foreign(Favorites::userForeignKey())->references(Favorites::userInstance()->getKey())->on(Favorites::userTable())
                 ->onDelete('cascade')->onUpdate('cascade');
