@@ -14,7 +14,7 @@ trait HasFavorites
 	 * @param  string|null $type
 	 * @return [type]       [description]
 	 */
-	public function favorites($type = null)
+	public function favorites($type)
 	{
 		return $this->morphedByMany($type, 'favorable');
 	}
@@ -33,6 +33,11 @@ trait HasFavorites
 		{
 			return $this->hasMany(Favorable::class)->where('favorables.favorable_type', $type);
 		}
+	}
+
+	public function favoriteIds($type = null)
+	{
+		return $this->favorables($type)->pluck('favorable_id');
 	}
 
 	public function addFavorite(Model $model)
