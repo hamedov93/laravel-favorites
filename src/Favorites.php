@@ -21,6 +21,11 @@ class Favorites {
 	 */
 	public static function setUserModel($model)
 	{
+		if ( ! class_exists($model))
+		{
+			return;
+		}
+		
 		self::$userModel = $model;
 		self::$userInstance = new $model;
 	}
