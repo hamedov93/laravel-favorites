@@ -42,9 +42,9 @@ trait HasFavorites
 
 	public function addFavorite(Model $model)
 	{
-		return $this->favorables()->create([
-			$this->getForeignKey() => $this->{$this->getKeyName()},
-			'favorable_id' => $model->id,
+		return $this->favorables()->firstOrCreate([
+			$this->getForeignKey() => $this->getKey(),
+			'favorable_id' => $model->getKey(),
 			'favorable_type' => $model->getMorphClass(),
 		]);
 	}
@@ -52,7 +52,7 @@ trait HasFavorites
 	public function removeFavorite(Model $model)
 	{
 		return $this->favorables()->where([
-			'favorable_id' => $model->id,
+			'favorable_id' => $model->getKey(),
 			'favorable_type' => $model->getMorphClass(),
 		])->delete();
 	}
@@ -62,12 +62,10 @@ trait HasFavorites
 		return $this->favorables($type)->delete();
 	}
 
-	
-
 	public function scopeHasFavorite($query, Model $model)
 	{
 		return $query->whereHas('favorables', function($q) use ($model) {
-			$q->where('favorables.favorable_id', $model->id);
+			$q->where('favorables.favorable_id', $model->getKey());
 			$q->where('favorables.favorable_type', $model->getMorphClass());
 		});
 	}
