@@ -19,7 +19,7 @@ class CreateFavorablesTable extends Migration
             $table->morphs('favorable');
             $table->timestamps();
 
-            $table->foreign(Favorites::userForeignKey())->references(Favorites::userInstance()->getKey())->on(Favorites::userTable())
+            $table->foreign(Favorites::userForeignKey())->references(Favorites::userInstance()->getKeyName())->on(Favorites::userTable())
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
