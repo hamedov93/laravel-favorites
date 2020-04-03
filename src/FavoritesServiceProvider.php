@@ -15,7 +15,7 @@ class FavoritesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'favorites');
+        $this->mergeConfigFrom(__DIR__.'/../config/favorites.php', 'favorites');
         Favorites::setUserModel(config('favorites.user_model'));
     }
 
@@ -27,7 +27,7 @@ class FavoritesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('favorites.php'),
+            __DIR__.'/../config/favorites.php' => config_path('favorites.php'),
         ], 'config');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
