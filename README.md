@@ -5,7 +5,7 @@ Manage user favorites in laravel application.
 ```composer require hamedov/laravel-favorites```
 
 # Publish config file
-```php artisan vendor:publish --provider=Hamedov\Favorites\FavoritesServiceProvider --tag="config"```
+```php artisan vendor:publish --provider="Hamedov\Favorites\FavoritesServiceProvider" --tag="config"```
 
 # Set user model in config file
 - Make sure you do this before migrations
