@@ -2,6 +2,7 @@
 
 namespace Hamedov\Favorites\Traits;
 
+use Illuminate\Database\Eloquent\Model;
 use Hamedov\Favorites\Models\Favorable;
 
 /**

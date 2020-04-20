@@ -8,8 +8,12 @@ use Hamedov\Favorites\Favorites;
 
 class Favorable extends Model
 {
-    protected $fillable = [
-    	Favorites::userForeignKey(), 'favorable_id', 'favorable_type',
+    /**
+     * No columns need to be guraded
+     * @var array
+     */
+    protected $guarded = [
+    	
     ];
 
     public function favorable()
