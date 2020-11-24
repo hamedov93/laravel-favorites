@@ -21,8 +21,7 @@ class Favorites {
 	 */
 	public static function setUserModel($model)
 	{
-		if ( ! class_exists($model))
-		{
+		if ( ! class_exists($model)) {
 			return;
 		}
 		

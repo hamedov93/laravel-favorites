@@ -3,8 +3,6 @@
 namespace Hamedov\Favorites;
 
 use Illuminate\Support\ServiceProvider;
-use Hamedov\Favorites\Favorites;
-
 
 class FavoritesServiceProvider extends ServiceProvider
 {

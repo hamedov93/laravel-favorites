@@ -3,8 +3,9 @@
     "description": "Manage user favorites in laravel application.",
     "keywords": ["laravel", "favorites", "likes"],
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "^7.4"
+        "php": "^7.3",
+        "illuminate/support": "^8.0",
+        "illuminate/database": "^8.0"
     },
     "license": "MIT",
     "support": {
