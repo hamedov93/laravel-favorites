@@ -5,7 +5,7 @@ namespace Hamedov\Favorites;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphedByMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Collection;
 
 /**
@@ -16,9 +16,9 @@ trait HasFavorites
 	/**
 	 * Get user favorites by model
 	 * @param  string|null $type
-	 * @return \Illuminate\Database\Eloquent\Relations\MorphedByMany
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
 	 */
-	public function favorites($type): MorphedByMany
+	public function favorites($type): MorphToMany
 	{
 		return $this->morphedByMany($type, 'favorable');
 	}
